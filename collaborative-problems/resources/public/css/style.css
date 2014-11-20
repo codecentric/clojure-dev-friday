@@ -1,0 +1,16 @@
+.pass {
+  color: #0a0;
+}
+
+.fail {
+  color: #a00;
+}
+
+.counted {
+  display: block;
+}
+
+.problems li {
+  float: left;
+  text-align: center;
+}
