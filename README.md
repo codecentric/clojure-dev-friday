@@ -3,7 +3,7 @@
 This repository contains examples and stubs for getting to know Clojure.
 
 ## Prerequisites
-- Java 1.6+
+- Java 1.8+
 - A Clojure IDE
 - Leiningen
 
