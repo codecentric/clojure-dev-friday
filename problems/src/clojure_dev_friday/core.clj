@@ -42,7 +42,7 @@
     (let [^File file (io/file filepath)]
       (if (.exists file)
         (read-var-source problem-var (FileReader. file))
-        (InputStreamReader. (.getResourceAsStream Class (str "/" filepath)))))))
+        (read-var-source problem-var (InputStreamReader. (.getResourceAsStream Class (str "/" filepath))))))))
 
 (defn find-solution-var
   ([test-var-symbol]
