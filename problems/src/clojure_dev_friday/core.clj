@@ -1,6 +1,6 @@
 (ns clojure-dev-friday.core
   (:import [java.net InetAddress]
-           [java.io PushbackReader LineNumberReader File FileReader])
+           [java.io PushbackReader LineNumberReader File FileReader InputStreamReader])
   (:require clojure.test
             [robert.hooke :refer [add-hook]]
             [clojure.java.io :as io]
@@ -23,22 +23,26 @@
 (defn problem-level [report]
   (-> report (:ns) (ns-name) (str) (str/split #"-") (last) (keyword)))
 
+(defn read-var-source [problem-var rdr]
+  (with-open [rdr (LineNumberReader. rdr)]
+    (dotimes [_ (dec (:line (meta problem-var)))] (.readLine rdr))
+    (let [text (StringBuilder.)
+          pbr (proxy [PushbackReader] [rdr]
+                (read [] (let [i (proxy-super read)]
+                           (.append text (char i))
+                           i)))]
+      (if (= :unknown *read-eval*)
+        (throw (IllegalStateException. "Unable to read source while *read-eval* is :unknown."))
+        (read (PushbackReader. pbr)))
+      (str text))))
+
 (defn source-fn
   [problem-var]
   (when-let [filepath (:file (meta problem-var))]
     (let [^File file (io/file filepath)]
-      (when (.exists file)
-        (with-open [rdr (LineNumberReader. (FileReader. file))]
-          (dotimes [_ (dec (:line (meta problem-var)))] (.readLine rdr))
-          (let [text (StringBuilder.)
-                pbr (proxy [PushbackReader] [rdr]
-                      (read [] (let [i (proxy-super read)]
-                                 (.append text (char i))
-                                 i)))]
-            (if (= :unknown *read-eval*)
-              (throw (IllegalStateException. "Unable to read source while *read-eval* is :unknown."))
-              (read (PushbackReader. pbr)))
-            (str text)))))))
+      (if (.exists file)
+        (read-var-source problem-var (FileReader. file))
+        (InputStreamReader. (.getResourceAsStream Class (str "/" filepath)))))))
 
 (defn find-solution-var
   ([test-var-symbol]
