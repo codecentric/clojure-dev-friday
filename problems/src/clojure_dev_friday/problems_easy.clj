@@ -8,7 +8,7 @@
 ;; Write a function which returns the last element in a sequence.
 (def _p19
   ;;TODO your solution here
-  )
+  last)
 
 (solve problem19 
   (= (_p19 [1 2 3 4 5]) 5)
@@ -204,7 +204,8 @@
   (= (_p38 45 67 11) 67))
 
 ;; Problem 39:  Interleave Two Seqs
-;; Write a function which takes two sequences and returns the first item from each, then the second item from each, then the third, etc.
+;; Write a function which takes two sequences and returns the first item from each, then the second item from each,
+;; then the third, etc.
 (def _p39
   ;;TODO your solution here
   )
@@ -259,7 +260,8 @@
   (= _p45 (take 5 (iterate #(+ 3 %) 1))))
 
 ;; Problem 47:  Contain Yourself
-;; The contains? function checks if a KEY is present in a given collection.  This often leads beginner clojurians to use it incorrectly with numerically indexed collections like vectors and lists.
+;; The contains? function checks if a KEY is present in a given collection.  This often leads beginner
+;; clojurians to use it incorrectly with numerically indexed collections like vectors and lists.
 (def _p47
   ;;TODO your solution here
   )
@@ -271,7 +273,8 @@
   (not (contains? '(1 2 4) _p47)))
 
 ;; Problem 48:  Intro to some
-;; The some function takes a predicate function and a collection.  It returns the first logical true value of (predicate x) where x is an item in the collection.
+;; The some function takes a predicate function and a collection.  It returns the first logical true value
+;; of (predicate x) where x is an item in the collection.
 (def _p48
   ;;TODO your solution here
   )
@@ -321,7 +324,8 @@
   (= (_p61 [:foo :bar] ["foo" "bar" "baz"]) {:foo "foo", :bar "bar"}))
 
 ;; Problem 62:  Re-implement Iterate
-;; Given a side-effect free function f and an initial value x write a function which returns an infinite lazy sequence of x, (f x), (f (f x)), (f (f (f x))), etc.
+;; Given a side-effect free function f and an initial value x write a function which returns an infinite
+;; lazy sequence of x, (f x), (f (f x)), (f (f (f x))), etc.
 (def _p62
   ;;TODO your solution here
   )
@@ -332,7 +336,9 @@
   (= (take 9 (_p62 #(inc (mod % 3)) 1)) (take 9 (cycle [1 2 3]))))
 
 ;; Problem 63:  Group a Sequence
-;; Given a function f and a sequence s, write a function which returns a map.  The keys should be the values of f applied to each item in s.  The value at each key should be a vector of corresponding items in the order they appear in s.
+;; Given a function f and a sequence s, write a function which returns a map.  The keys should be the values
+;; of f applied to each item in s.  The value at each key should be a vector of corresponding items in the order
+;; they appear in s.
 (def _p63
   ;;TODO your solution here
   )
@@ -358,7 +364,8 @@
   (= (_p66 1023 858) 33))
 
 ;; Problem 81:  Set Intersection
-;; Write a function which returns the intersection of two sets.  The intersection is the sub-set of items that each set has in common.
+;; Write a function which returns the intersection of two sets.  The intersection is the sub-set of items that each
+;; set has in common.
 (def _p81
   ;;TODO your solution here
   )
@@ -369,7 +376,8 @@
   (= (_p81 #{:a :b :c :d} #{:c :e :a :f :d}) #{:a :c :d}))
 
 ;; Problem 83:  A Half-Truth
-;; Write a function which takes a variable number of booleans.  Your function should return true if some of the parameters are true, but not all of the parameters are true.  Otherwise your function should return false.
+;; Write a function which takes a variable number of booleans.  Your function should return true if some of the
+;; parameters are true, but not all of the parameters are true.  Otherwise your function should return false.
 (def _p83
   ;;TODO your solution here
   )
@@ -383,7 +391,8 @@
   (= true (_p83 true true true false)))
 
 ;; Problem 88:  Symmetric Difference
-;; Write a function which returns the symmetric difference of two sets.  The symmetric difference is the set of items belonging to one but not both of the two sets.
+;; Write a function which returns the symmetric difference of two sets.  The symmetric difference is the set of
+;; items belonging to one but not both of the two sets.
 (def _p88
   ;;TODO your solution here
   )
@@ -395,7 +404,8 @@
   (= (_p88 #{[1 2] [2 3]} #{[2 3] [3 4]}) #{[1 2] [3 4]}))
 
 ;; Problem 90:  Cartesian Product
-;; Write a function which calculates the <a href="http://en.wikipedia.org/wiki/Cartesian_product"> Cartesian product</a> of two sets.
+;; Write a function which calculates the <a href="http://en.wikipedia.org/wiki/Cartesian_product"> Cartesian product</a>
+;; of two sets.
 (def _p90
   ;;TODO your solution here
   )
@@ -411,7 +421,9 @@
                   (into #{} (range 30))))))
 
 ;; Problem 95:  To Tree, or not to Tree
-;; Write a predicate which checks whether or not a given sequence represents a <a href="http://en.wikipedia.org/wiki/Binary_tree">binary tree</a>.  Each node in the tree must have a value, a left child, and a right child.
+;; Write a predicate which checks whether or not a given sequence represents a
+;; <a href="http://en.wikipedia.org/wiki/Binary_tree">binary tree</a>.  Each node in the tree must have a value,
+;; a left child, and a right child.
 (def _p95
   ;;TODO your solution here
   )
@@ -434,7 +446,9 @@
 )
 
 ;; Problem 96:  Beauty is Symmetry
-;; Let us define a binary tree as "symmetric" if the left half of the tree is the mirror image of the right half of the tree.  Write a predicate to determine whether or not a given binary tree is symmetric. (see <a href='/problem/95'>To Tree, or not to Tree</a> for a reminder on the tree representation we're using).
+;; Let us define a binary tree as "symmetric" if the left half of the tree is the mirror image of the right
+;; half of the tree.  Write a predicate to determine whether or not a given binary tree is symmetric.
+;; (see <a href='/problem/95'>To Tree, or not to Tree</a> for a reminder on the tree representation we're using).
 (def _p96
   ;;TODO your solution here
   )
@@ -454,7 +468,10 @@
    false))
 
 ;; Problem 97:  Pascal's Triangle
-;; <a href="http://en.wikipedia.org/wiki/Pascal%27s_triangle">Pascal's triangle</a> is a triangle of numbers computed using the following rules:<br/></br>- The first row is 1.</br>- Each successive row is computed by adding together adjacent numbers in the row above, and adding a 1 to the beginning and end of the row.<br/><br/>Write a function which returns the nth row of Pascal's Triangle.
+;; <a href="http://en.wikipedia.org/wiki/Pascal%27s_triangle">Pascal's triangle</a> is a triangle of numbers
+;; computed using the following rules:<br/></br>- The first row is 1.</br>- Each successive row is computed by
+;; adding together adjacent numbers in the row above, and adding a 1 to the beginning and end of the row.<br/><br/>
+;; Write a function which returns the nth row of Pascal's Triangle.
 
 
 
@@ -485,7 +502,9 @@
   (= (_p99 999 99) [9 8 9 0 1]))
 
 ;; Problem 100:  Least Common Multiple
-;; Write a function which calculates the <a href="http://en.wikipedia.org/wiki/Least_common_multiple">least common multiple</a>.  Your function should accept a variable number of positive integers or ratios. 
+;; Write a function which calculates the
+;; <a href="http://en.wikipedia.org/wiki/Least_common_multiple">least common multiple</a>.  Your function
+;; should accept a variable number of positive integers or ratios.
 (def _p100
   ;;TODO your solution here
   )
@@ -498,9 +517,14 @@
   (== (_p100 7 5/7 2 3/5) 210))
 
 ;; Problem 107:  Simple closures
-;; <p>Lexical scope and first-class functions are two of the most basic building blocks of a functional language like Clojure. When you combine the two together, you get something very powerful called <strong>lexical closures</strong>. With these, you can exercise a great deal of control over the lifetime of your local bindings, saving their values for use later, long after the code you're running now has finished.</p>
+;; <p>Lexical scope and first-class functions are two of the most basic building blocks of a functional
+;; language like Clojure. When you combine the two together, you get something very powerful called
+;; <strong>lexical closures</strong>. With these, you can exercise a great deal of control over the
+;; lifetime of your local bindings, saving their values for use later, long after the code you're running now has finished.</p>
 ;;
-;;<p>It can be hard to follow in the abstract, so let's build a simple closure. Given a positive integer <i>n</i>, return a function <code>(f x)</code> which computes <i>x<sup>n</sup></i>. Observe that the effect of this is to preserve the value of <i>n</i> for use outside the scope in which it is defined.</p>
+;;<p>It can be hard to follow in the abstract, so let's build a simple closure. Given a positive integer
+;; <i>n</i>, return a function <code>(f x)</code> which computes <i>x<sup>n</sup></i>. Observe that the
+;; effect of this is to preserve the value of <i>n</i> for use outside the scope in which it is defined.</p>
 (def _p107
   ;;TODO your solution here
   )
@@ -512,7 +536,9 @@
   (= [1 2 4 8 16] (map #((_p107 %) 2) [0 1 2 3 4])))
 
 ;; Problem 118:  Re-implement Map
-;; <p>Map is one of the core elements of a functional programming language. Given a function <code>f</code> and an input sequence <code>s</code>, return a lazy sequence of <code>(f x)</code> for each element <code>x</code> in <code>s</code>.
+;; <p>Map is one of the core elements of a functional programming language. Given a function
+;; <code>f</code> and an input sequence <code>s</code>, return a lazy sequence of <code>(f x)</code> for
+;; each element <code>x</code> in <code>s</code>.
 (def _p118
   ;;TODO your solution here
   )
@@ -528,7 +554,9 @@
         (take 2))))
 
 ;; Problem 120:  Sum of square of digits
-;; Write a function which takes a collection of integers as an argument.  Return the count of how many elements are smaller than the sum of their squared component digits.  For example: 10 is larger than 1 squared plus 0 squared; whereas 15 is smaller than 1 squared plus 5 squared.
+;; Write a function which takes a collection of integers as an argument.  Return the count of how many
+;; elements are smaller than the sum of their squared component digits.  For example: 10 is larger than
+;; 1 squared plus 0 squared; whereas 15 is smaller than 1 squared plus 5 squared.
 (def _p120
   ;;TODO your solution here
   )
@@ -565,11 +593,17 @@
   (and (= (class x) x) x)))
 
 ;; Problem 128:  Recognize Playing Cards
-;; <p>A standard American deck of playing cards has four suits - spades, hearts, diamonds, and clubs - and thirteen cards in each suit. Two is the lowest rank, followed by other integers up to ten; then the jack, queen, king, and ace.</p>
+;; <p>A standard American deck of playing cards has four suits - spades, hearts, diamonds, and clubs -
+;; and thirteen cards in each suit. Two is the lowest rank, followed by other integers up to ten; then
+;; the jack, queen, king, and ace.</p>
 ;
-;<p>It's convenient for humans to represent these cards as suit/rank pairs, such as H5 or DQ: the heart five and diamond queen respectively. But these forms are not convenient for programmers, so to write a card game you need some way to parse an input string into meaningful components. For purposes of determining rank, we will define the cards to be valued from 0 (the two) to 12 (the ace)</p>
+;<p>It's convenient for humans to represent these cards as suit/rank pairs, such as H5 or DQ: the heart
+; five and diamond queen respectively. But these forms are not convenient for programmers, so to write a
+; card game you need some way to parse an input string into meaningful components. For purposes of
+; determining rank, we will define the cards to be valued from 0 (the two) to 12 (the ace)</p>
 ;
-;<p>Write a function which converts (for example) the string "SJ" into a map of <code>{:suit :spade, :rank 9}</code>. A ten will always be represented with the single character "T", rather than the two characters "10".</p>
+;<p>Write a function which converts (for example) the string "SJ" into a map of <code>{:suit :spade, :rank 9}
+; </code>. A ten will always be represented with the single character "T", rather than the two characters "10".</p>
 (def _p128
   ;;TODO your solution here
   )
@@ -583,9 +617,12 @@
                      S8 S9 ST SJ SQ SK SA])))
 
 ;; Problem 135:  Infix Calculator
-;; Your friend Joe is always whining about Lisps using the prefix notation for math. Show him how you could easily write a function that does math using the infix notation. Is your favorite language that flexible, Joe?
+;; Your friend Joe is always whining about Lisps using the prefix notation for math. Show him
+;; how you could easily write a function that does math using the infix notation. Is your favorite
+;; language that flexible, Joe?
 ;
-;Write a function that accepts a variable length mathematical expression consisting of numbers and the operations +, -, *, and /. Assume a simple calculator that does not do precedence and instead just calculates left to right.
+;Write a function that accepts a variable length mathematical expression consisting of numbers and the
+; operations +, -, *, and /. Assume a simple calculator that does not do precedence and instead just calculates left to right.
 (def _p135
   ;;TODO your solution here
   )

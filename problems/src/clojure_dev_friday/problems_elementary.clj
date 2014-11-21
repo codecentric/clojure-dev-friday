@@ -5,16 +5,19 @@
 ;; TAKEN FROM 4CLOJURE.COM
 
 ;; Problem 1:  Nothing but the Truth
-;; This is a clojure form.  Enter a value which will make the form evaluate to true.  Don't over think it!  If you are confused, see the <a href='/directions'>getting started</a> page.  Hint: true is equal to true.
+;; This is a clojure form.  Enter a value which will make the form evaluate to true.  Don't over think it!
+;; If you are confused, see the <a href='/directions'>getting started</a> page.  Hint: true is equal to true.
 (def _p1
   ;;TODO your solution here
-  )
+  false)
 
 (solve problem1 
   (= _p1 true))
 
 ;; Problem 2:  Simple Math
-;; <p>If you are not familiar with <a href='http://en.wikipedia.org/wiki/Polish_notation'>polish notation</a>, simple arithmetic might seem confusing.</p><p><strong>Note:</strong> Enter only enough to fill in the blank (in this case, a single number) - do not retype the whole problem.</p>
+;; <p>If you are not familiar with <a href='http://en.wikipedia.org/wiki/Polish_notation'>polish notation</a>,
+;; simple arithmetic might seem confusing.</p><p><strong>Note:</strong> Enter only enough to fill in the blank
+;; (in this case, a single number) - do not retype the whole problem.</p>
 (def _p2
   ;;TODO your solution here
   4
@@ -44,7 +47,7 @@
 ;; When operating on a list, the conj function will return a new list with one or more items "added" to the front.
 (def _p5
   ;;TODO your solution here
-  )
+  [1 2 3 4])
 
 (solve problem5 
   (= _p5 (conj '(2 3 4) 1))
@@ -62,7 +65,7 @@
 ;; When operating on a Vector, the conj function will return a new vector with one or more items "added" to the end.
 (def _p7
   ;;TODO your solution here
-  )
+  (vector 1 2 3 4))
 
 (solve problem7 
   (= _p7 (conj [1 2 3] 4))
@@ -88,7 +91,8 @@
   (= #{1 2 3 4} (conj #{1 4 3} _p9)))
 
 ;; Problem 10:  Intro to Maps
-;; Maps store key-value pairs.  Both maps and keywords can be used as lookup functions. Commas can be used to make maps more readable, but they are not required.
+;; Maps store key-value pairs.  Both maps and keywords can be used as lookup functions. Commas can be used to make maps
+;; more readable, but they are not required.
 (def _p10
   ;;TODO your solution here
   )
@@ -162,7 +166,8 @@
   (= (_p16 "Rhea") "Hello, Rhea!"))
 
 ;; Problem 17:  Sequences: map
-;; The map function takes two arguments: a function (f) and a sequence (s).  Map returns a new sequence consisting of the result of applying f to each item of s.  Do not confuse the map function with the map data structure.
+;; The map function takes two arguments: a function (f) and a sequence (s).  Map returns a new sequence consisting of
+;; the result of applying f to each item of s.  Do not confuse the map function with the map data structure.
 (def _p17
   ;;TODO your solution here
   )
@@ -171,7 +176,8 @@
   (= _p17 (map #(+ % 5) '(1 2 3))))
 
 ;; Problem 18:  Sequences: filter
-;; The filter function takes two arguments: a predicate function (f) and a sequence (s).  Filter returns a new sequence consisting of all the items of s for which (f item) returns true.
+;; The filter function takes two arguments: a predicate function (f) and a sequence (s).  Filter returns a new
+;; sequence consisting of all the items of s for which (f item) returns true.
 (def _p18
   ;;TODO your solution here
   )
@@ -211,7 +217,8 @@
   (= _p37 (apply str (re-seq #"[A-Z]+" "bA1B3Ce "))))
 
 ;; Problem 57:  Simple Recursion
-;; A recursive function is a function which calls itself.  This is one of the fundamental techniques used in functional programming.
+;; A recursive function is a function which calls itself.  This is one of the fundamental techniques used
+;; in functional programming.
 (def _p57
   ;;TODO your solution here
   )
@@ -220,7 +227,11 @@
   (= _p57 ((fn foo [x] (when (> x 0) (conj (foo (dec x)) x))) 5)))
 
 ;; Problem 64:  Intro to Reduce
-;; <a href='http://clojuredocs.org/clojure_core/clojure.core/reduce'>Reduce</a> takes a 2 argument function and an optional starting value. It then applies the function to the first 2 items in the sequence (or the starting value and the first element of the sequence). In the next iteration the function will be called on the previous return value and the next item from the sequence, thus reducing the entire collection to one value. Don't worry, it's not as complicated as it sounds.
+;; <a href='http://clojuredocs.org/clojure_core/clojure.core/reduce'>Reduce</a> takes a 2 argument function
+;; and an optional starting value. It then applies the function to the first 2 items in the sequence (or the
+;; starting value and the first element of the sequence). In the next iteration the function will be called
+;; on the previous return value and the next item from the sequence, thus reducing the entire collection to one
+;; value. Don't worry, it's not as complicated as it sounds.
 (def _p64
   ;;TODO your solution here
   )
@@ -231,7 +242,9 @@
   (=  6 (reduce _p64 1 [2 3])))
 
 ;; Problem 68:  Recurring Theme
-;; Clojure only has one non-stack-consuming looping construct: recur.  Either a function or a loop can be used as the recursion point.  Either way, recur rebinds the bindings of the recursion point to the values it is passed.  Recur must be called from the tail-position, and calling it elsewhere will result in an error.
+;; Clojure only has one non-stack-consuming looping construct: recur.  Either a function or a loop can be used
+;; as the recursion point.  Either way, recur rebinds the bindings of the recursion point to the values it is passed.
+;; Recur must be called from the tail-position, and calling it elsewhere will result in an error.
 (def _p68
   ;;TODO your solution here
   )
@@ -245,7 +258,10 @@
       result))))
 
 ;; Problem 71:  Rearranging Code: ->
-;; The -> macro threads an expression x through a variable number of forms. First, x is inserted as the second item in the first form, making a list of it if it is not a list already.  Then the first form is inserted as the second item in the second form, making a list of that form if necessary.  This process continues for all the forms.  Using -> can sometimes make your code more readable.
+;; The -> macro threads an expression x through a variable number of forms. First, x is inserted as the second item
+;; in the first form, making a list of it if it is not a list already.  Then the first form is inserted as the second
+;; item in the second form, making a list of that form if necessary.  This process continues for all the forms.
+;; Using -> can sometimes make your code more readable.
 (def _p71
   ;;TODO your solution here
   )
@@ -256,7 +272,10 @@
    5))
 
 ;; Problem 72:  Rearranging Code: ->>
-;; The ->> macro threads an expression x through a variable number of forms. First, x is inserted as the last item in the first form, making a list of it if it is not a list already.  Then the first form is inserted as the last item in the second form, making a list of that form if necessary.  This process continues for all the forms.  Using ->> can sometimes make your code more readable.
+;; The ->> macro threads an expression x through a variable number of forms. First, x is inserted as the last item
+;; in the first form, making a list of it if it is not a list already.  Then the first form is inserted as the last
+;; item in the second form, making a list of that form if necessary.  This process continues for all the forms.
+;; Using ->> can sometimes make your code more readable.
 (def _p72
   ;;TODO your solution here
   )
@@ -267,7 +286,9 @@
    11))
 
 ;; Problem 134:  A nil key
-;; Write a function which, given a key and map, returns true <a href="http://en.wikipedia.org/wiki/If_and_only_if">iff</a> the map contains an entry with that key and its value is nil.
+;; Write a function which, given a key and map, returns true
+;; <a href="http://en.wikipedia.org/wiki/If_and_only_if">iff</a> the map contains an entry with that key
+;; and its value is nil.
 (def _p134
   ;;TODO your solution here
   )
@@ -278,7 +299,11 @@
   (false? (_p134 :c {:a nil :b 2})))
 
 ;; Problem 145:  For the win
-;; Clojure's <a href="http://clojuredocs.org/clojure_core/clojure.core/for">for</a> macro is a tremendously versatile mechanism for producing a sequence based on some other sequence(s). It can take some time to understand how to use it properly, but that investment will be paid back with clear, concise sequence-wrangling later. With that in mind, read over these <code>for</code> expressions and try to see how each of them produces the same result.
+;; Clojure's <a href="http://clojuredocs.org/clojure_core/clojure.core/for">for</a> macro is a tremendously versatile
+;; mechanism for producing a sequence based on some other sequence(s). It can take some time to understand
+;; how to use it properly, but that investment will be paid back with clear, concise sequence-wrangling later.
+;; With that in mind, read over these <code>for</code> expressions and try to see how each of them produces the
+;; same result.
 (def _p145
   ;;TODO your solution here
   )
@@ -295,7 +320,10 @@
         (+ x y))))
 
 ;; Problem 156:  Map Defaults
-;; When retrieving values from a map, you can specify default values in case the key is not found:<br/><br/>(= 2 (:foo {:bar 0, :baz 1} 2))<br/><br/>However, what if you want the map itself to contain the default values?  Write a function which takes a default value and a sequence of keys and constructs a map.
+;; When retrieving values from a map, you can specify default values in case the key is not found:
+;; (= 2 (:foo {:bar 0, :baz 1} 2))
+;; However, what if you want the map itself to contain the default values?  Write a function which takes a
+;; default value and a sequence of keys and constructs a map.
 (def _p156
   ;;TODO your solution here
   )

@@ -2,6 +2,8 @@
 
 This repository contains examples and stubs for getting to know Clojure.
 
+Slides are available [here](http://goo.gl/VTZVaB)
+
 ## Prerequisites
 - Java 1.8+
 - A Clojure IDE
