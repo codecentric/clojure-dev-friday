@@ -78,7 +78,7 @@
       (pr-str)))
 
 (defn post-results [test-reports]
-  (http/put "http://localhost:8000/results"
+  (http/put "http://clojuredevfriday-codecentric2.rhcloud.com/results"
              {:body (results-body test-reports)
               :headers {"content-type" "application/edn"}}))
 
