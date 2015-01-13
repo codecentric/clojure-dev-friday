@@ -1,4 +1,4 @@
-(ns clojure-dev-friday.problems-medium
+(ns clojure-dev-friday.problems-normal
   (:require [clojure-dev-friday.core :refer [solve]]
             [clojure.test :refer [run-tests]]))
 
@@ -571,7 +571,8 @@
 ;; Write an oscillating iterate: a function that takes an initial value and a variable number of functions. It should return a lazy sequence of the functions applied to the value in order, restarting from the first function after it hits the end.
 (def _p144
   ;;TODO your solution here
-  )
+  (fn oscilrate [n f & fs]
+    (lazy-seq (cons n (apply oscilrate (f n) (concat fs [f]) )))))
 
 (solve problem144 
   (= (take 3 (_p144 3.14 int double)) [3.14 3 3.0])
